@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agendar Cita Médica</title>
   <style>
     body {
       font-family: Calibri, sans-serif;
-      background-color: #e0f7ff;
+      background-color: #e6fff5;
       padding: 30px;
     }
 
     h1 {
-      color: #1e90ff;
+      color: #2ecc71;
       text-align: center;
     }
 
@@ -22,15 +22,15 @@
       background-color: #ffffff;
       padding: 25px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
-      border: 2px solid #87ceeb;
+      box-shadow: 0 0 10px rgba(102, 217, 164, 0.3);
+      border: 2px solid #66d9a4;
     }
 
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
-      color: #00bfff;
+      color: #2ecc71;
     }
 
     input, textarea {
@@ -43,7 +43,7 @@
     }
 
     button {
-      background-color: #00bfff;
+      background-color: #2ecc71;
       color: #fff;
       padding: 14px 20px;
       border: none;
@@ -53,17 +53,17 @@
       cursor: pointer;
       margin-top: 20px;
       width: 100%;
-      box-shadow: 0 4px 6px rgba(0, 191, 255, 0.3);
+      box-shadow: 0 4px 6px rgba(46, 204, 113, 0.3);
       transition: background-color 0.3s ease, transform 0.1s ease;
     }
 
     button:hover {
-      background-color: #1e90ff;
+      background-color: #27ae60;
     }
 
     button:active {
       transform: scale(0.97);
-      box-shadow: 0 2px 4px rgba(0, 191, 255, 0.2);
+      box-shadow: 0 2px 4px rgba(46, 204, 113, 0.2);
     }
 
     #result {
@@ -77,13 +77,13 @@
   <h1>Formulario para Agendar Cita Médica</h1>
   <form id="appointmentForm">
     <label for="patientName">Nombre del Paciente:</label>
-    <input type="text" id="patientName" name="patientName" required>
+    <input type="text" id="patientName" name="patientName" required />
 
     <label for="appointmentDate">Fecha de la Cita:</label>
-    <input type="date" id="appointmentDate" name="appointmentDate" required>
+    <input type="date" id="appointmentDate" name="appointmentDate" required />
 
     <label for="appointmentTime">Hora de la Cita:</label>
-    <input type="time" id="appointmentTime" name="appointmentTime" required>
+    <input type="time" id="appointmentTime" name="appointmentTime" required />
 
     <label for="reason">Motivo de la Cita:</label>
     <textarea id="reason" name="reason" rows="4" required></textarea>
@@ -124,14 +124,15 @@
       })
       .then(data => {
         console.log('Cita agendada exitosamente:', data);
-        document.getElementById('result').textContent = '¡Cita agendada exitosamente! ID: ' + data._id;
-        document.getElementById('result').style.color = 'green';
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = '¡Cita agendada exitosamente!' + (data._id ? ' ID: ' + data._id : '');
+        resultDiv.style.color = '#1e8449';
         document.getElementById('appointmentForm').reset();
       })
       .catch(error => {
         console.error('Error:', error);
         document.getElementById('result').textContent = 'Error al agendar la cita: ' + error.message;
-        document.getElementById('result').style.color = 'red';
+        document.getElementById('result').style.color = '#c0392b';
       });
     });
   </script>
