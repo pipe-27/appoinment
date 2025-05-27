@@ -6,56 +6,64 @@
   <title>Agendar Cita Médica</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      font-family: Calibri, sans-serif;
+      background-color: #e0f7ff;
       padding: 30px;
     }
 
     h1 {
-      color: #800020;
+      color: #1e90ff;
       text-align: center;
     }
 
     form {
       max-width: 500px;
       margin: auto;
-      background-color: #fff;
+      background-color: #ffffff;
       padding: 25px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(128, 0, 32, 0.2);
-      border: 2px solid #800020;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+      border: 2px solid #87ceeb;
     }
 
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
-      color: #800020;
+      color: #00bfff;
     }
 
     input, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #cccccc;
       border-radius: 4px;
       font-size: 1em;
     }
 
     button {
-      background-color: #800020;
+      background-color: #00bfff;
       color: #fff;
-      padding: 12px 20px;
+      padding: 14px 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 1em;
+      font-weight: bold;
       cursor: pointer;
       margin-top: 20px;
       width: 100%;
+      box-shadow: 0 4px 6px rgba(0, 191, 255, 0.3);
+      transition: background-color 0.3s ease, transform 0.1s ease;
     }
 
     button:hover {
-      background-color: #a0002d;
+      background-color: #1e90ff;
+    }
+
+    button:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 4px rgba(0, 191, 255, 0.2);
     }
 
     #result {
